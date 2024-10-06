@@ -10,7 +10,8 @@ app.use(express.json())
 // Connect to DB
 db.connect()
 
-app.use('/user', usersRouter)
+// [GET] /users
+app.use('/users', usersRouter)
 
 app.listen(port, () => {
 	console.log(`Example app listening on port ${port}`)

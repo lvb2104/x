@@ -3,6 +3,12 @@ import { loginValidator, registerValidator } from '~/middlewares/users.middlewar
 import { loginController, registerController } from '~/controllers/user.controllers'
 const usersRouter = express.Router()
 
+/**
+ * Description. Login a user
+ * Path: /login
+ * Method: POST
+ * Body: { email: string, password: string }
+ */
 usersRouter.post('/login', loginValidator, loginController)
 /**
  * Description. Register a new user

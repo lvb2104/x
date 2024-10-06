@@ -3,6 +3,7 @@ import { Request, Response, NextFunction } from 'express'
 import { checkSchema } from 'express-validator'
 import usersServices from '~/services/users.services'
 
+// Define the login validator
 export const loginValidator = (req: Request, res: Response, next: NextFunction) => {
 	const { email, password } = req.body
 	if (!email || !password) {
@@ -13,6 +14,7 @@ export const loginValidator = (req: Request, res: Response, next: NextFunction) 
 	next()
 }
 
+// Define the register validator
 export const registerValidator = validate(
 	checkSchema({
 		name: { isLength: { options: { min: 1, max: 100 } }, notEmpty: true, trim: true, isString: true },

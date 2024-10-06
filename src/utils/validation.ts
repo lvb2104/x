@@ -5,7 +5,7 @@ import { RunnableValidationChains } from 'express-validator/lib/middlewares/sche
 // can be reused by many routes
 export const validate = (validation: RunnableValidationChains<ValidationChain>) => {
 	return async (req: express.Request, res: express.Response, next: express.NextFunction) => {
-		// sequential processing, stops running validations chain if one fails.
+		// Run the validation
 		await validation.run(req)
 		const result = validationResult(req)
 
